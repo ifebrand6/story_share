@@ -1,0 +1,35 @@
+<p> this will make this not an empty set
+</p>
+<div class="story index">
+<h2>Stories</h2>
+<p> this will make this not an empty set
+
+<%= link_to("Add New Story ", {:action => 'new'}, :class => 'action new') %>
+
+<table class="listing" summary="Story list">
+<tr class="header">
+<th>&nbsp;</th>
+<th>Story</th>
+<th>Visible</th>
+<th>Pages</th>
+<th>Action</th>
+</tr>
+
+
+	<% @stories.each do |story| %>
+<tr>
+	<td><%= story.position %></td>
+	<td><%= story.name %></td>
+	<td class="center"><%= story.visible ? 'Yes': 'No' %></td>
+	<td class="center"><%= story.pages.size %></td>
+	<td class="actions">
+	
+	
+	<%= link_to("Show", {:action => 'show',:id => story.id}, :class => 'action edit') %>
+	<%= link_to("Edit", '#', :class => 'action edit') %>
+	<%= link_to("Delete", '#', :class => 'action delete') %>
+	</td>
+</tr>
+<% end %>
+	</table>
+	</div> 

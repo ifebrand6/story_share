@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Instructments</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @instructments.each do |instructment| %>
+      <tr>
+        <td><%= link_to 'Show', instructment %></td>
+        <td><%= link_to 'Edit', edit_instructment_path(instructment) %></td>
+        <td><%= link_to 'Destroy', instructment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Instructment', new_instructment_path %>

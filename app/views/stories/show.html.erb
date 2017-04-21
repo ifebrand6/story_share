@@ -1,0 +1,26 @@
+ <%= link_to("<< Back to index", {:action =>'index'}, :class => 'back-link') %>
+
+ <div class="stories show">
+ 	<h2>Show Stories</h2>
+ 	<table sumarry="Story detail view">
+ 		<tr>
+ 			<th>Name</th>
+ 			<td><%= @one.name %></td>
+ 		</tr>
+ 		<tr>
+ 			<th>Position</th>
+ 			<td><%= @one.position %></td>
+ 		</tr>
+ 		<tr>
+ 			<th>Visible</th>
+ 			<td><%= @one.visible ? 'Yes!' : 'Not quite' %></td>
+ 		</tr>
+ 		<tr>
+ 			<th>Created</th>
+ 			<td><%= @one.created_at %></td>
+ 		</tr>
+ 		<tr>
+ 			<th>Upadate</th>
+ 			<td><%= @one.updated_at %></td>
+ 		</tr>
+ 	</table>

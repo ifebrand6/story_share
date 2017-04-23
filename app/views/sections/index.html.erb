@@ -1,0 +1,38 @@
+<% if !flash[:notice].blank? %>
+<div class="notice">
+<%= flash[:notice] %></div>
+<% end %>
+
+<div class="section index">
+<h2>Stories</h2>
+<p> this will make this not an empty set
+
+<%= link_to("Add New Section ", {:action => 'new'}, :class => 'action new') %>
+
+<table class="listing" summary="Section list">
+<tr class="header">
+<th>&nbsp;</th>
+<th>Section</th>
+<th>Visible</th>
+<th>Pages</th>
+<th>Action</th>
+</tr>
+
+
+	<% @sections.each do |section| %>
+<tr>
+	<td><%= section.position %></td>
+	<td><%= section.name %></td>
+	<td class="center"><%= section.visible ? 'Yes': 'No' %></td>
+	<td class="center"><%= section.created_at %></td>
+	<td class="actions">
+	
+	
+	<%= link_to("Show", {:action => 'show',:id => section.id}, :class => 'action edit') %>
+	<%= link_to("Edit", {:action => 'edit',:id => section.id}, :class => 'action edit') %>
+	<%= link_to("Delete", {:action => 'delete',:id => section.id}, :class => 'action delete') %>
+	</td>
+</tr>
+<% end %>
+	</table>
+	</div> 

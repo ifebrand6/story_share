@@ -1,5 +1,8 @@
-<p> this will make this not an empty set
-</p>
+<% if !flash[:notice].blank? %>
+<div class="notice">
+<%= flash[:notice] %></div>
+<% end %>
+
 <div class="story index">
 <h2>Stories</h2>
 <p> this will make this not an empty set
@@ -26,8 +29,8 @@
 	
 	
 	<%= link_to("Show", {:action => 'show',:id => story.id}, :class => 'action edit') %>
-	<%= link_to("Edit", '#', :class => 'action edit') %>
-	<%= link_to("Delete", '#', :class => 'action delete') %>
+	<%= link_to("Edit", {:action => 'edit',:id => story.id}, :class => 'action edit') %>
+	<%= link_to("Delete", {:action => 'delete',:id => story.id}, :class => 'action delete') %>
 	</td>
 </tr>
 <% end %>

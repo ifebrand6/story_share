@@ -1,9 +1,9 @@
  <%= link_to("<< Back to index", {:action =>'index'}, :class => 'back-link') %>
 
-<div class="stories edit">
- 	<h2>Update a Story</h2>
- 	<%= form_for(:one, :url => {:action => 'update',:id => @one.id}) do |f| %>
- 	<table summary="Story form fill">
+<div class="sections edit">
+ 	<h2>Update a Section</h2>
+ 	<%= form_for(:section, :url => {:action => 'update',:id => @section.id}) do |f| %>
+ 	<table summary="Section form fill">
  	<tr>
  		<th>Name</th>
  		<td><%= f.text_field(:name) %></td>
@@ -20,7 +20,7 @@
  	 
  	</table>
  	<div class="form-buttons">
- 		<%= submit_tag("update your story" )%>
+ 		<%= submit_tag("update your  a section" )%>
  	</div>
  	<% end %>
  	 </div>

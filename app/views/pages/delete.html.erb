@@ -1,0 +1,15 @@
+ <%= link_to("<< Back to index", {:action =>'index'}, :class => 'back-link') %>
+
+<div class="page delete">
+ 	<h2>Erase a page</h2>
+ 	<%= form_for(:page, :url => {:action => 'destroy',:id => @page.id}) do |f| %>
+ 	<p>Do you want to erase your own story?</p>
+ 	<p class="reference-name"><%= @page.name %></p>
+
+ 
+ 	<div class="form-buttons">
+ 		<%= submit_tag("erase your page" )%>
+ 	</div>
+ 	<% end %>
+
+</div>

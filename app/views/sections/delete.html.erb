@@ -1,10 +1,10 @@
  <%= link_to("<< Back to index", {:action =>'index'}, :class => 'back-link') %>
 
-<div class="stories delete">
- 	<h2>Erase a Story</h2>
- 	<%= form_for(:one, :url => {:action => 'destroy',:id => @one.id}) do |f| %>
+<div class="sections delete">
+ 	<h2>Erase a Section</h2>
+ 	<%= form_for(:section, :url => {:action => 'destroy',:id => @section.id}) do |f| %>
  	<p>Do you want to erase your own story?</p>
- 	<p class="reference-name"><%= @one.name %></p>
+ 	<p class="reference-name"><%= @section.name %></p>
 
  
  	<div class="form-buttons">

@@ -1,0 +1,26 @@
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <title><%= @page_title || "Admin"%></title>
+     <%= stylesheet_link_tag('application', :media => 'all') %>
+      <%= javascript_include_tag('public')%>
+      
+  </head>
+     <body>
+     	<div class="header">
+     		<h1>Story share  | </h1>
+     </div>
+     <div id="main">
+     	<% if !flash[:notice].blank? %>
+  <div class="notice">
+  <%= flash[:notice] %></div>
+  <% end %>
+     	<div id="content">
+      <%= yield %>
+  </div>
+  </div>
+  <div id="footer">ife on the rails
+  	</div>
+  	 
+    </body>
+  </html>

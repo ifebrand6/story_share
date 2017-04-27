@@ -8,8 +8,15 @@
  	<h2>Show Stories</h2>
  	<table sumarry="Story detail view">
  		<tr>
+ 			<th>Story ID</th>
+ 			<td><%= @page.story_id %></td>
+ 			<tr>
  			<th>Name</th>
  			<td><%= @page.name %></td>
+ 		</tr>
+ 		<tr>
+ 			<th>Permalink</th>
+ 			<td><%= @page.permalink %></td>
  		</tr>
  		<tr>
  			<th>Position</th>
@@ -17,7 +24,7 @@
  		</tr>
  		<tr>
  			<th>Visible</th>
- 			<td><%= @page.visible ? 'Yes!' : 'Not quite' %></td>
+ 			<td><%= @page.visible ? 'Yes' : 'NO' %></td>
  		</tr>
  		<tr>
  			<th>Created</th>

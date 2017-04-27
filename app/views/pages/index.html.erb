@@ -7,18 +7,24 @@
 <table class="listing" summary="page list">
 <tr class="header">
 <th>&nbsp;</th>
+<th>STORY </th>
 <th>Page</th>
+<th>Permalink</th>
 <th>Visible</th>
-<th>Pages</th>
-<th>Action</th>
+<th>Sections</th>
+<th>Actions</th>
 </tr>
 
 
 	<% @pages.each do |page| %>
 <tr>
 	<td><%= page.position %></td>
+	<td><%= page.story.name if page.story %></td>
 	<td><%= page.name %></td>
-	<td class="center"><%= page.visible ? 'Yes': 'No' %></td>
+	<td><%= page.permalink %></td>
+	<td class="center"><%= page.visible ? 'Yes' : 'No' %></td>
+	<td class="center"><%= page.sections.size %></td>
+	
 		<td class="center"><%= page.created_at %></td>
 <td class="actions">
 	
@@ -31,3 +37,6 @@
 <% end %>
 	</table>
 </div>
+<p>javascript</p>
+<%= link_to('Roar', '#', :onclick => "jsRoar('Javascript'); return true;") %>
+<%= javascript_tag("jsRoar('Rails');") %>

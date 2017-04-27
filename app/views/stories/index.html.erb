@@ -1,14 +1,12 @@
-<% if !flash[:notice].blank? %>
-<div class="notice">
-<%= flash[:notice] %></div>
-<% end %>
+
+<% @page_title = "Share Story" %>
 
 <div class="story index">
 <h2>Stories</h2>
-<p> this will make this not an empty set
 
-<%= link_to("Add New Story ", {:action => 'new'}, :class => 'action new') %>
-
+<%= %>
+<%= link_to(image_tag('logo.png', :size => '10px') + "Add New Story ", {:action => 'new'}, :class => 'action new') %>
+<div><%= pluralize(@stories.size, 'story') %> found</div>
 <table class="listing" summary="Story list">
 <tr class="header">
 <th>&nbsp;</th>
@@ -20,10 +18,11 @@
 
 
 	<% @stories.each do |story| %>
-<tr>
+<tr class="<%= cycle('odd','even') %>">
+
 	<td><%= story.position %></td>
 	<td><%= story.name %></td>
-	<td class="center"><%= story.visible ? 'Yes': 'No' %></td>
+	<td class="center"><%= status_tag(story.visible) %></td>
 	<td class="center"><%= story.pages.size %></td>
 	<td class="actions">
 	

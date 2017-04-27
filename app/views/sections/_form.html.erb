@@ -1,0 +1,34 @@
+<table summary="Section form fill">
+ 	<tr>
+ 		<th><%= f.label(:page_id, "Page") %></th>
+ 		<td><%= f.select(:page_id, @pages.map { |s| [s.name, s.id]  }) %></td>
+ 	  </tr>
+ 	  <tr>
+ 	<tr>
+ 		<th><%= f.label(:name, "Name") %></th>
+ 		<td><%= f.text_field(:name) %></td>
+ 	  </tr>
+ 	  <tr>
+ 		<th><%= f.label(:permalink) %></th>
+ 		<td><%= f.select(:permalink, 1..10) %></td>
+ 	  </tr>
+ 	  <tr>
+ 	  <tr>
+ 		<th><%= f.label(:position) %>n</th>
+ 		<td><%= f.select(:position, 1..@section_count) %></td>
+ 	  </tr>
+ 	  <tr>
+ 		<th><%= f.label(:visible) %></th>
+ 		<td><%= f.check_box(:visible) %></td>
+ 	  </tr>
+ 	   <tr>
+ 		<th><%= f.label(:content_type) %></th>
+ 		<td><%= f.radio_button(:content_type, 'text') %></td>
+ 		<td><%= f.radio_button(:content_type, 'HTML') %></td>
+ 	  </tr>
+ 	   <tr>
+ 		<th><%= f.label(:content) %></th>
+ 		<td><%= f.text_area(:content) %></td>
+ 	  </tr>
+ 	   	  	
+ 	 	</table>

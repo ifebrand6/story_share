@@ -1,0 +1,18 @@
+<table summary="Section form fill">
+ 	<tr>
+ 		<th><%= f.label(:name, "Name") %></th>
+ 		
+ 		<td><%= f.text_field(:name) %></td>
+ 	  </tr>
+ 	  <tr>
+ 	  	<th><%= f.label(:position, "Position") %></th>
+ 		
+ 		<td><%= f.select(:position, 1..@one_count) %></td>
+ 	  </tr>
+ 	  <tr>
+ 	  	<th><%= f.label(:visible, "Visible") %></th>
+ 		
+ 		<td><%= f.check_box(:visible) %></td>
+ 	  </tr>
+ 	   	  	
+ 	 	</table>

@@ -1,7 +1,3 @@
-<% if !flash[:notice].blank? %>
-<div class="notice">
-<%= flash[:notice] %></div>
-<% end %>
 
 <div class="section index">
 <h2>Stories</h2>
@@ -23,7 +19,7 @@
 <tr>
 	<td><%= section.position %></td>
 	<td><%= section.name %></td>
-	<td class="center"><%= section.visible ? 'Yes': 'No' %></td>
+	<td class="center"><%= status_tag(section.visible) %></td>
 	<td class="center"><%= section.created_at %></td>
 	<td class="actions">
 	

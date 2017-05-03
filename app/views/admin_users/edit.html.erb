@@ -1,0 +1,11 @@
+ <%= link_to("<< Back to index", {:action =>'index'}, :class => 'back-link') %>
+
+<div class="user edit">
+ 	<h2>Update a Account details</h2>
+ 	<%= form_for(:user, :url => {:action => 'update',:id => @user.id}) do |f| %>
+ 	<%= render(:partial => "form", :locals => {:f => f}) %>
+ 	<div class="form-buttons">
+ 		<%= submit_tag("update your Account" )%>
+ 	</div>
+ 	<% end %>
+ 	 </div>

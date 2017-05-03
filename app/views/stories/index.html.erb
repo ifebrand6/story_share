@@ -27,6 +27,7 @@
 	<td class="actions">
 	
 	
+	<%= link_to("View page", {:controller => 'pages',:story_id => story.id}, :class => 'action edit') %>
 	<%= link_to("Show", {:action => 'show',:id => story.id}, :class => 'action edit') %>
 	<%= link_to("Edit", {:action => 'edit',:id => story.id}, :class => 'action edit') %>
 	<%= link_to("Delete", {:action => 'delete',:id => story.id}, :class => 'action delete') %>

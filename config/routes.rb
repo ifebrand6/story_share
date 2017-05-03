@@ -1,31 +1,50 @@
 Rails.application.routes.draw do
-  
  
-  get 'stories/index'
-  post 'stories/create'
+ get 'admin', :to => "access#index"
+  post 'access/login'
 
-  get '/stories' => 'stories#index'
+ match ':controller(/:action(/:id))', :via => [:get, :post]
+  # get 'access/index'
+
+ 
+# AdminUser 
+  # get 'admin_users/index'
+
+  # get 'admin_users/new'
+  #  post 'admin_users/create'
+
+  # get 'admin_users/edit'
+  #  post 'admin_users/update'
+
+  # get 'admin_users/delete'
+  # post 'admin_users/remove'
+
+# story route
+  # get 'stories/index'
+  # post 'stories/create'
+
+  # get '/stories' => 'stories#index'
 
 
-  get 'stories/show/:id' => 'stories#show', as: :stories_show
+  # get 'stories/show/:id' => 'stories#show', as: :stories_show
 
-  get 'stories/new'
+  # get 'stories/new'
 
   
 
-  get 'stories/edit'
-  post 'stories/update'
+  # get 'stories/edit'
+  # post 'stories/update'
 
-  get 'stories/delete'
-  post 'stories/destroy'
+  # get 'stories/delete'
+  # post 'stories/destroy'
   #pages
-  get 'pages/' =>  'pages#index', as: :pages
+  # get 'pages/' =>  'pages#index', as: :pages
 
-  get 'pages/new'
-  post 'pages/create'
-  get 'pages/edit'
-  get 'pages/:id' => 'pages#show', as: :page
-  get 'pages/:id/sections' => 'sections#index', as: :pages_section
+  # get 'pages/new'
+  # post 'pages/create'
+  # get 'pages/edit'
+  # get 'pages/:id' => 'pages#show', as: :page
+  # get 'pages/:id/sections' => 'sections#index', as: :pages_section
 
   
   
@@ -63,6 +82,7 @@ Rails.application.routes.draw do
 
   
   
-  root 'stories#index'
+  # root 'stories#index'
+  # match ':controller(/:action(/:id)', :via => :get
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

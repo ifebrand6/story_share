@@ -26,6 +26,4 @@ span.status { display: block; width: 10px; height: 10px; margin: 0.25em auto; pa
 #errorExplanation {width: 400px; padding: 0; margin: 0 auto 1.5em; border: 1px solid #aa0000;background-color: #ffffff; font-size: 12px;}
 #errorExplanation p {color: #333333; margin: 0; padding: 3px 0.5em;}
 #errorExplanation ul {margin-top: 0;}
-.header{ height: 30px; padding-top: 2px; text-align: center; background: #9933120; color: #FFFFFF; }
-.header h1 { margin: 0; padding: 0;}
 #errorExplanation ul li {list-style: square;}

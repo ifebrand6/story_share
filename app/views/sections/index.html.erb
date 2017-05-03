@@ -1,9 +1,7 @@
-
+<%@page_title = "sections"%>
 <div class="section index">
-<h2>Stories</h2>
-<p> this will make this not an empty set
-
-<%= link_to("Add New Section ", {:action => 'new'}, :class => 'action new') %>
+<h2>Sections</h2>
+<%= link_to("Add New Section ", {:action => 'new',:page_id => @page.id}, :class => 'action new') %>
 
 <table class="listing" summary="Section list">
 <tr class="header">
@@ -25,8 +23,8 @@
 	
 	
 	<%= link_to("Show", {:action => 'show',:id => section.id}, :class => 'action edit') %>
-	<%= link_to("Edit", {:action => 'edit',:id => section.id}, :class => 'action edit') %>
-	<%= link_to("Delete", {:action => 'delete',:id => section.id}, :class => 'action delete') %>
+	<%= link_to("Edit", {:action => 'edit',:id => section.id,:page_id => @page.id}, :class => 'action edit') %>
+	<%= link_to("Delete", {:action => 'delete',:id => section.id,:page_id => @page.id}, :class => 'action delete') %>
 	</td>
 </tr>
 <% end %>

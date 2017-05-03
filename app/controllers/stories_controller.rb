@@ -1,4 +1,5 @@
   class StoriesController < ApplicationController
+    # before_action :confirm_logged_in
     layout "admin"
     # GET /instructments
     def index
@@ -27,6 +28,7 @@
       flash[:notice] = "Your '#{@one.name}' have been updated successfully"           
        redirect_to stories_show_path(@one.id)                              
      else
+       
        @one_count = Story.count
        render :edit
 

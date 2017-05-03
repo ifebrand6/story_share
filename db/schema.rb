@@ -10,18 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170330164539) do
+ActiveRecord::Schema.define(version: 20170430124312) do
 
   create_table "admin_users", force: :cascade do |t|
-    t.string   "firt_name"
     t.string   "last_name"
-    t.string   "hashed_password"
     t.string   "email",           limit: 100
     t.boolean  "visible"
     t.integer  "position"
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
     t.string   "username",        limit: 25
+    t.string   "password_digest"
+    t.string   "first_name"
     t.index ["username"], name: "index_admin_users_on_username"
   end
 

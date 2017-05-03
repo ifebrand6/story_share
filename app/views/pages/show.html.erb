@@ -2,10 +2,10 @@
 <div class="notice">
 <%= flash[:notice] %></div>
 <% end %>
- <%= link_to("<< Back to index", {:action =>'index'}, :class => 'back-link') %>
+ <%= link_to("<< Back to index", {:action =>'index',:story_id => @story.id}, :class => 'back-link') %>
 
  <div class="stories show">
- 	<h2>Show Stories</h2>
+ 	<h2>About Page</h2>
  	<table sumarry="Story detail view">
  		<tr>
  			<th>Story ID</th>

@@ -1,7 +1,9 @@
 class SectionsController < ApplicationController
+  # before_action :confirm_logged_in
+  before_action :find_page
   layout "admin"
   def index
-    @sections = Section.where(page_id: params[:id]).sorted
+    @sections = Section.where(:page_id => @page.id).all
   end
 
   def show
@@ -9,15 +11,15 @@ class SectionsController < ApplicationController
   end
 
   def new
-    @section = Section.new
+    @section = Section.new({:page_id => @page.id})
     @pages = Page.order('position ASC')
     @section_count = Section.count + 1
   end
   def create
     @section = Section.new(section_params)
-    if @section.save!
+    if @section.save
       flash[:notice] = "You have added a new section"
-      redirect_to sections_index_path
+      redirect_to sections_index_path({:page_id => @page.id})
       else
         flash[:notice] = "err Refill the form"
         @pages = Page.order('position ASC')
@@ -49,10 +51,17 @@ class SectionsController < ApplicationController
   def destroy
     section = Section.find(params[:id]).destroy
     flash[:notice] = "Your section have been erase"
-    redirect_to sections_index_path
+    redirect_to sections_index_path({:page_id => @page.id})
   end
   private
+  
+ 
   def section_params
    params.require(:section).permit(:page_id,:section_id, :name,:permalink, :position, :visible, :content_type, :content)
+  end
+  def find_page
+    if params[:page_id]
+      @page = Page.find(params[:page_id])
+    end
   end
 end

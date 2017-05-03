@@ -1,4 +1,8 @@
 class Page < ApplicationRecord
+	validates_presence_of :name
+	validates_length_of :name, :maximum => 25
+	validates_presence_of :permalink
+	validates_uniqueness_of :permalink, :within => 3.200
 	belongs_to :story
 	has_many :sections
 	has_and_belongs_to_many :editors, :class_name => "AdminUser"

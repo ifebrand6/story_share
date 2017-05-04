@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
  
+  root 'public#index' 
+
+  get 'public/show/:permalink', :to => 'public#show'
+
  get 'admin', :to => "access#index"
   post 'access/login'
 
@@ -48,37 +52,37 @@ Rails.application.routes.draw do
 
   
   
-  post 'pages/update'
+  # post 'pages/update'
 
   
-  post 'pages/destroy'
+  # post 'pages/destroy'
 
-  get 'pages/delete'
+  # get 'pages/delete'
   #sections route
-   get 'sections/index'
-   get 'sections/show/:id' => 'sections#show', as: :sections_show
+  #  get 'sections/index'
+  #  get 'sections/show/:id' => 'sections#show', as: :sections_show
 
-  get 'sections/new'
-  post 'sections/create'
+  # get 'sections/new'
+  # post 'sections/create'
 
-  get 'sections/edit'
-  post 'sections/update'
+  # get 'sections/edit'
+  # post 'sections/update'
 
-  get 'sections/delete'
-  post 'sections/destroy'
+  # get 'sections/delete'
+  # post 'sections/destroy'
 
   
 
-  resources :instructments
+  # resources :instructments
   # resources :instructmes
 
-  get 'user/index'
+  # get 'user/index'
 
-  get 'user/edit'
+  # get 'user/edit'
 
-  get 'user/new'
+  # get 'user/new'
 
-  get 'user/create'
+  # get 'user/create'
 
   
   

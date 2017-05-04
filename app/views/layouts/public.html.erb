@@ -1,0 +1,25 @@
+  <!DOCTYPE html>
+
+  <html>
+    <head>
+      <title>StoryShare <%= " | #{@page_title } " if @page_title %></title>
+     <%= stylesheet_link_tag('application', :media => 'all') %>
+      <%= javascript_include_tag('public')%>
+      
+  </head>
+     <body>
+     	<div class="header">
+     		<h1>Story Share</h1>
+     </div>
+     <div id="navigation">
+     <%= render(:partial => 'layouts/navigation', :local => {:story => @stories}) %><div>
+     	<div id="content">
+      <%= yield %>
+  </div>
+  <div id="clear"></div>
+  </div>
+  <div id="footer">ife on the rails
+  	</div>
+  	 
+    </body>
+  </html>

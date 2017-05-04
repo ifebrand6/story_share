@@ -63,5 +63,8 @@ class SectionsController < ApplicationController
     if params[:page_id]
       @page = Page.find(params[:page_id])
     end
+    if params[:story_id]
+      @story = Story.find(params[:story_id])
+    end
   end
 end

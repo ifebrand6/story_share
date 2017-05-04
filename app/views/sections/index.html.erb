@@ -1,6 +1,7 @@
 <%@page_title = "sections"%>
 <div class="section index">
 <h2>Sections</h2>
+# <%= link_to("<< Section Manager", {:controller => 'pages', :action => 'index',:story_id => @page.story_id}, :class => 'back-link') %>
 <%= link_to("Add New Section ", {:action => 'new',:page_id => @page.id}, :class => 'action new') %>
 
 <table class="listing" summary="Section list">

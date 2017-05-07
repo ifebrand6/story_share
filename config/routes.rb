@@ -1,13 +1,28 @@
 Rails.application.routes.draw do
  
   root 'public#index' 
+ 
+  resources:stories
+  get 'stories/delete', :as => 'delete_story'
+   
+  resources:pages
+  resources:sections
+  resources:admin_users
 
+
+  # member do
+  #   get :delete
+  #   end
+  #   resources:
+  # end
   get 'public/show/:permalink', :to => 'public#show'
 
  get 'admin', :to => "access#index"
-  post 'access/login'
+  get 'access/login'
+  post 'access/logout'
+  post 'access/attempt_login'
 
- match ':controller(/:action(/:id))', :via => [:get, :post]
+ # match ':controller(/:action(/:id))', :via => [:get, :post]
   # get 'access/index'
 
  
@@ -21,7 +36,7 @@ Rails.application.routes.draw do
   #  post 'admin_users/update'
 
   # get 'admin_users/delete'
-  # post 'admin_users/remove'
+  # post 'admin_users/remove' :as 'admin' adnin_user
 
 # story route
   # get 'stories/index'
@@ -38,8 +53,8 @@ Rails.application.routes.draw do
 
   # get 'stories/edit'
   # post 'stories/update'
-
-  # get 'stories/delete'
+ # get 'pages/delete'
+ #  get 'stories/delete'
   # post 'stories/destroy'
   #pages
   # get 'pages/' =>  'pages#index', as: :pages
@@ -57,7 +72,7 @@ Rails.application.routes.draw do
   
   # post 'pages/destroy'
 
-  # get 'pages/delete'
+ 
   #sections route
   #  get 'sections/index'
   #  get 'sections/show/:id' => 'sections#show', as: :sections_show
@@ -68,13 +83,13 @@ Rails.application.routes.draw do
   # get 'sections/edit'
   # post 'sections/update'
 
-  # get 'sections/delete'
+  get 'sections/delete'
   # post 'sections/destroy'
 
   
 
-  # resources :instructments
-  # resources :instructmes
+  resources :instructments
+  resources :instructmes
 
   # get 'user/index'
 

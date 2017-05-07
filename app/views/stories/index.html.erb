@@ -4,8 +4,8 @@
 <div class="story index">
 <h2>Stories</h2>
 
-<%= %>
-<%= link_to(image_tag('logo.png', :size => '10px') + "Add New Story ", {:action => 'new'}, :class => 'action new') %>
+
+<%= link_to "Add New Story ", new_story_path, :class => 'action new' %>
 <div><%= pluralize(@stories.size, 'story') %> found</div>
 <table class="listing" summary="Story list">
 <tr class="header">
@@ -27,10 +27,10 @@
 	<td class="actions">
 	
 	
-	<%= link_to("View page", {:controller => 'pages',:story_id => story.id}, :class => 'action edit') %>
-	<%= link_to("Show", {:action => 'show',:id => story.id}, :class => 'action edit') %>
-	<%= link_to("Edit", {:action => 'edit',:id => story.id}, :class => 'action edit') %>
-	<%= link_to("Delete", {:action => 'delete',:id => story.id}, :class => 'action delete') %>
+	<%= link_to "View page",pages_path(:story_id => story.id), :class => 'action edit' %>
+	<%= link_to "Show", story_path(:id => story.id), :class => 'action edit' %>
+	<%= link_to "Edit", edit_story_path(:id => story.id), :class => 'action edit' %>
+	<%= link_to "Delete", {:action => 'delete', :id => story.id}, :class => 'action delete' %>
 	</td>
 </tr>
 <% end %>

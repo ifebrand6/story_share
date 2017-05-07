@@ -26,7 +26,7 @@
       @one = Story.find(params[:id])
       if @one.update_attributes(one_params) 
       flash[:notice] = "Your '#{@one.name}' have been updated successfully"           
-       redirect_to stories_show_path(@one.id)                              
+       redirect_to story_show_path(@one.id)                              
      else
        
        @one_count = Story.count
@@ -41,7 +41,7 @@
 
       if @one.save
         flash[:notice] =  "Ahh! your story have been added to history!"
-         redirect_to stories_index_path
+         redirect_to stories_path
       else
          @one_count = Story.count + 1
         render :new
@@ -60,7 +60,7 @@
     def destroy
        one = Story.find(params[:id]).destroy
         flash[:notice] = "Your story have been erase from history" 
-       redirect_to stories_index_path
+       redirect_to story_index_path
       
     end
 

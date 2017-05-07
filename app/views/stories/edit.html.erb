@@ -2,7 +2,7 @@
 
 <div class="stories edit">
  	<h2>Update a Story</h2>
- 	<%= form_for(:one, :url => {:action => 'update',:id => @one.id}) do |f| %>
+ 	<%= form_for(:one, story_path(:action => 'update',:id => @one.id), method: :patch, do |f| %>
  <%= render(:partial => "share/form",:locals => {:f => f}) %>
  	<div class="form-buttons">
  		<%= submit_tag("update your story" )%>

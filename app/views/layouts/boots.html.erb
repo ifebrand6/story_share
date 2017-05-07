@@ -1,0 +1,33 @@
+  <!DOCTYPE html>
+
+  <html>
+    <head>
+      <title>StoryShare <%= " | #{@page_title } " if @page_title %></title>
+     <%= stylesheet_link_tag('bootstrap', :media => 'all') %>
+     <%= stylesheet_link_tag('styles', :media => 'all') %>
+      <%= stylesheet_link_tag('booto', :media => 'all') %>
+      <%= stylesheet_link_tag('boott', :media => 'all') %>
+            <%= stylesheet_link_tag('boottt', :media => 'all') %>
+
+
+
+      <%= javascript_include_tag('public')%>
+      
+  </head>
+ <body class="login-bg">
+  	<div class="header">
+	     <div class="container">
+	        <div class="row">
+	           <div class="col-md-12">
+	              <!-- Logo -->
+	              <div class="logo">
+	                 <h1>Nootstrap Admin Theme</h1>
+	              </div>
+	           </div>
+	        </div>
+	     </div>
+	</div>
+ <%= yield %>
+
+    </body>
+  </html>

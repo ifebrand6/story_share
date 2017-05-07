@@ -11,3 +11,10 @@ Rails.application.config.assets.version = '1.0'
 # Rails.application.config.assets.precompile += %w( search.js )
 Rails.application.config.assets.precompile +=%w(public.js)
 Rails.application.config.assets.precompile +=%w(admin.css)
+Rails.application.config.assets.precompile += %w( public.css )
+Rails.application.config.assets.precompile += %w( bootstrap.css )
+Rails.application.config.assets.precompile += %w( booto.css )
+Rails.application.config.assets.precompile += %w( boott.css )
+Rails.application.config.assets.precompile += %w( boottt.css )
+
+Rails.application.config.assets.precompile += %w( styles.css )

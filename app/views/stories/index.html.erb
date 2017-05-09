@@ -1,38 +1,34 @@
 
 <% @page_title = "Share Story" %>
 
-<div class="story index">
-<h2>Stories</h2>
-
-
-<%= link_to "Add New Story ", new_story_path, :class => 'action new' %>
-<div><%= pluralize(@stories.size, 'story') %> found</div>
-<table class="listing" summary="Story list">
-<tr class="header">
-<th>&nbsp;</th>
-<th>Story</th>
-<th>Visible</th>
-<th>Pages</th>
-<th>Action</th>
-</tr>
-
-
-	<% @stories.each do |story| %>
-<tr class="<%= cycle('odd','even') %>">
-
-	<td><%= story.position %></td>
-	<td><%= story.name %></td>
-	<td class="center"><%= status_tag(story.visible) %></td>
-	<td class="center"><%= story.pages.size %></td>
-	<td class="actions">
-	
-	
-	<%= link_to "View page",pages_path(:story_id => story.id), :class => 'action edit' %>
+	 <div class="header">
+                                <h4 class="title">Story</h4>
+                                <p class="category"><%= pluralize(@stories.size, 'story') %> found</p>
+                            </div>
+	 <div class="content table-responsive table-full-width">
+                                <table class="table table-hover table-striped">
+                                    <thead>
+                                        <th>Position</th>
+                                    	<th>Name</th>
+                                    	<th>Visible</th>
+                                    	<th>Page</th>
+                                    
+                                    </thead>
+                                    <% @stories.each do |story| %>
+                                    <tbody>
+                                        <tr>
+                                        	<td><%= story.position %></td>
+                                        	<td><%= story.name %></td>
+                                        	<td><%= status_tag(story.visible) %></td>
+                                        	<td><%= story.pages.size %></td>
+                                        	<td class="action edit"><%= link_to "View page",pages_path(:story_id => story.id), :class => 'action edit' %>
 	<%= link_to "Show", story_path(:id => story.id), :class => 'action edit' %>
 	<%= link_to "Edit", edit_story_path(:id => story.id), :class => 'action edit' %>
-	<%= link_to "Delete", {:action => 'delete', :id => story.id}, :class => 'action delete' %>
-	</td>
-</tr>
-<% end %>
-	</table>
-	</div> 
+	<%= link_to "Delete", {:action => 'delete', :id => story.id}, :class => 'action delete' %></td>
+                                        </tr>
+                                       </tbody>
+                                         <% end %>
+                                </table>
+
+                            </div>
+	

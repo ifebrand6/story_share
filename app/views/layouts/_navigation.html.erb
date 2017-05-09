@@ -2,9 +2,9 @@
 <ul>
 <% @stories.each do |story| %>
 <li><%= story.name %>
-	<ul>
+	<ul class="nav">
 		<% story.pages.visible.sorted.each do |page|%>
-		<li><%= link_to(page.name, :action => 'show', :permalink =>
+		<li class="current"><%= link_to(page.name, :action => 'show', :permalink =>
 		page.permalink) %>
 		</li> 
 		<% end%>
@@ -12,3 +12,5 @@
 </li>
 <%end%>
 </ul>
+<br>
+<br>

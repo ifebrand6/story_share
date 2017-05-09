@@ -392,6 +392,12 @@ body {
   right: 0;
   text-align: center;
 }
+.my {
+  margin: 0px;
+  padding: 10px 0px;
+  text-align: center;
+  color: #5C7CBB;
+}
 
 
 .login-wrapper .box {

@@ -1,4 +1,4 @@
-<%= error_messages_for(@one) %>
+<%= error_messages_for(@story) %>
 <table summary="Section form fill">
  	<tr>
  		<th><%= f.label(:name, "Name") %></th>
@@ -8,7 +8,7 @@
  	  <tr>
  	  	<th><%= f.label(:position, "Position") %></th>
  		
- 		<td><%= f.select(:position, 1..@one_count) %></td>
+ 		<td><%= f.select(:position, 1..@story_count) %></td>
  	  </tr>
  	  <tr>
  	  	<th><%= f.label(:visible, "Visible") %></th>

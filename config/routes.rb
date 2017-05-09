@@ -1,13 +1,15 @@
 Rails.application.routes.draw do
  
-  root 'public#index' 
+ 
  
   resources:stories
-  get 'stories/delete', :as => 'delete_story'
-   
-  resources:pages
+  get 'stories/delete/:id' => "stories#delete"
+    resources:pages 
+    get 'pages/delete'
   resources:sections
+
   resources:admin_users
+  get 'admin_users/delete'
 
 
   # member do
@@ -21,7 +23,7 @@ Rails.application.routes.draw do
   get 'access/login'
   post 'access/logout'
   post 'access/attempt_login'
-
+ root 'public#index' 
  # match ':controller(/:action(/:id))', :via => [:get, :post]
   # get 'access/index'
 

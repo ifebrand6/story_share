@@ -3,23 +3,38 @@
   <html>
     <head>
       <title>StoryShare <%= " | #{@page_title } " if @page_title %></title>
-     <%= stylesheet_link_tag('public', :media => 'all') %>
-      <%= javascript_include_tag('public')%>
-      
+      <%= stylesheet_link_tag('bootstrap', :media => 'all') %>
+     <%= stylesheet_link_tag('styles', :media => 'all') %>
+      <%= stylesheet_link_tag('booto', :media => 'all') %>
+      <%= stylesheet_link_tag('boott', :media => 'all') %>
+            <%= stylesheet_link_tag('boottt', :media => 'all') %>
   </head>
      <body>
      	<div class="header">
-     		<h1>Story Share</h1>
+     		<h1 class="my">Story Share</h1>
      </div>
-     <div id="navigation">
-     <%= render(:partial => 'layouts/navigation', :local => {:story => @stories}) %><div>
+     <br/>
+     <br/>
+     <div class="col-md-2" >
+     <div class="sidebar content-box" style="display: block;">
+     <%= render(:partial => 'layouts/navigation', :local => {:story => @stories}) %>
+   </div>
+ </div>
+     <div>
      	<div id="content">
       <%= yield %>
   </div>
-  <div id="clear"></div>
+ 
   </div>
-  <div id="footer">ife on the rails
-  	</div>
+   <footer>
+         <div class="conainer">
+         
+            <div class="copy text-center">
+               Copyright udeogu ifechukwu<a href='#'>Story share</a>
+            </div>
+            
+         </div>
+      </footer>
   	 
     </body>
   </html>

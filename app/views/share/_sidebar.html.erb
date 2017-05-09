@@ -1,0 +1,39 @@
+  <%= stylesheet_link_tag('animate.min', :media => 'all') %>
+  <%= stylesheet_link_tag('bootstrap.min', :media => 'all') %>
+   <%= stylesheet_link_tag('light', :media => 'all') %>
+    <%= stylesheet_link_tag('demo', :media => 'all') %>
+     <%= stylesheet_link_tag('icon', :media => 'all') %>
+ <div class="sidebar" data-color="red" data-image="<%= image_tag('sidebar.jpg') %>">
+
+    <!--   you can change the color of the sidebar using: data-color="blue | azure | green | orange | red | purple" -->
+
+
+    	<div class="sidebar-wrapper">
+            <div class="logo">
+                <a href="#" class="simple-text">
+                    Story Share
+                </a>
+            </div>
+
+            <ul class="nav">
+                <li>
+                    <a href="dashboard.html">
+                        <i class="pe-7s-graph"></i>
+                        <p>Dashboard</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="user.html">
+                        <i class="pe-7s-user"></i>
+                        <p>User Profile</p>
+                    </a>
+                </li>
+                <li class="active">
+
+                    <i class="pe-7s-user"></i>
+                    <%= link_to "MANAGE STORIES", stories_path, :id => "a"%>
+                </li>
+               
+            </ul>
+    	</div>
+    </div>
